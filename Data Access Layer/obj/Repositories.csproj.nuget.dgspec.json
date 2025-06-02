@@ -1,0 +1,148 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Opportune-Bridge\\Data Access Layer\\Repositories.csproj": {}
+  },
+  "projects": {
+    "D:\\Opportune-Bridge\\Core\\Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Opportune-Bridge\\Core\\Core.csproj",
+        "projectName": "Core",
+        "projectPath": "D:\\Opportune-Bridge\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\pci151\\.nuget\\packages\\",
+        "outputPath": "D:\\Opportune-Bridge\\Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\pci151\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "EntityFrameworkCore.SqlServer.HierarchyId": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.410\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Opportune-Bridge\\Data Access Layer\\Repositories.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Opportune-Bridge\\Data Access Layer\\Repositories.csproj",
+        "projectName": "Repositories",
+        "projectPath": "D:\\Opportune-Bridge\\Data Access Layer\\Repositories.csproj",
+        "packagesPath": "C:\\Users\\pci151\\.nuget\\packages\\",
+        "outputPath": "D:\\Opportune-Bridge\\Data Access Layer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\pci151\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "D:\\Opportune-Bridge\\Core\\Core.csproj": {
+                "projectPath": "D:\\Opportune-Bridge\\Core\\Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.18, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.410\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

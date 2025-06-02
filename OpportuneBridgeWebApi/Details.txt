@@ -1,0 +1,42 @@
+-- Give all access to superadmin for all modules
+INSERT INTO public."Permissions" (role_id, module_id, can_read, can_add, can_edit, can_delete)
+SELECT '{superadmin_role_id}', module_id, true, true, true, true FROM public."Module";
+
+-- Allow company admin to read their dashboard
+INSERT INTO public."Permissions" (role_id, module_id, can_read)
+SELECT '{company_admin_role_id}', module_id, true
+FROM public."Module" WHERE module_name = 'Company Admin Dashboard';
+
+-- Allow org admin to read their dashboard
+INSERT INTO public."Permissions" (role_id, module_id, can_read)
+SELECT '{org_admin_role_id}', module_id, true
+FROM public."Module" WHERE module_name = 'Org Admin Dashboard';
+
+-- Allow user to read/add Register Page
+INSERT INTO public."Permissions" (role_id, module_id, can_read, can_add)
+SELECT '{user_role_id}', module_id, true, true
+FROM public."Module" WHERE module_name = 'Register Page';
+
+-- Allow user to read/edit/delete their Profile Page
+INSERT INTO public."Permissions" (role_id, module_id, can_read, can_edit, can_delete)
+SELECT '{user_role_id}', module_id, true, true, true
+FROM public."Module" WHERE module_name = 'Profile Page';
+
+-- Allow user to read Home and Login Page
+INSERT INTO public."Permissions" (role_id, module_id, can_read)
+SELECT '{user_role_id}', module_id, true
+FROM public."Module" WHERE module_name IN ('Home Page', 'Login Page');
+
+-- Block all other roles from Register Page
+INSERT INTO public."Permissions" (role_id, module_id)
+SELECT r.role_id, m.module_id
+FROM public."Roles" r, public."Module" m
+WHERE m.module_name = 'Register Page'
+  AND r.role_name != 'user';
+
+-- Allow mentors, hr, coordinators, assistants, recruitment lead to read Profile, Home, Login Page
+INSERT INTO public."Permissions" (role_id, module_id, can_read)
+SELECT r.role_id, m.module_id, true
+FROM public."Roles" r, public."Module" m
+WHERE r.role_name IN ('mentors', 'hr', 'coordinators', 'assistant', 'recruitment lead')
+  AND m.module_name IN ('Profile Page', 'Home Page', 'Login Page');

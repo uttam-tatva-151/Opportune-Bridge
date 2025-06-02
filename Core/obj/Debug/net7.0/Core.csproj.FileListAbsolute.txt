@@ -1,0 +1,11 @@
+D:\Opportune-Bridge\Core\bin\Debug\net7.0\Core.deps.json
+D:\Opportune-Bridge\Core\bin\Debug\net7.0\Core.dll
+D:\Opportune-Bridge\Core\bin\Debug\net7.0\Core.pdb
+D:\Opportune-Bridge\Core\obj\Debug\net7.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Opportune-Bridge\Core\obj\Debug\net7.0\Core.AssemblyInfoInputs.cache
+D:\Opportune-Bridge\Core\obj\Debug\net7.0\Core.AssemblyInfo.cs
+D:\Opportune-Bridge\Core\obj\Debug\net7.0\Core.csproj.CoreCompileInputs.cache
+D:\Opportune-Bridge\Core\obj\Debug\net7.0\Core.dll
+D:\Opportune-Bridge\Core\obj\Debug\net7.0\refint\Core.dll
+D:\Opportune-Bridge\Core\obj\Debug\net7.0\Core.pdb
+D:\Opportune-Bridge\Core\obj\Debug\net7.0\ref\Core.dll
