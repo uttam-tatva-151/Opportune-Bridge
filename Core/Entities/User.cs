@@ -9,7 +9,6 @@ namespace Repositories;
 /// <summary>
 /// Stores user profile and non-authentication information, including avatar image as bytea.
 /// </summary>
-[Table("User")]
 [Index("Username", Name = "User_username_key", IsUnique = true)]
 public partial class User
 {
@@ -52,6 +51,12 @@ public partial class User
 
     [Column("updated_at", TypeName = "timestamp without time zone")]
     public DateTime UpdatedAt { get; set; }
+
+    [InverseProperty("Admin")]
+    public virtual ICollection<AdminChildUser> AdminChildUserAdmins { get; set; } = new List<AdminChildUser>();
+
+    [InverseProperty("Child")]
+    public virtual ICollection<AdminChildUser> AdminChildUserChildren { get; set; } = new List<AdminChildUser>();
 
     [InverseProperty("User")]
     public virtual ICollection<UserAuth> UserAuths { get; set; } = new List<UserAuth>();

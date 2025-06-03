@@ -32,6 +32,7 @@ namespace Core.Beans
         public const string ERROR_MISSING_DB_CONNECTION = "Database connection string is missing or empty in configuration.";
         public const string ERROR_MISSING_JWT_SECTION = "JWT configuration section is missing or invalid.";
         public const string ERROR_INVALID_JWT_VALUES = "JWT configuration values (Key, Issuer, Audience) must not be null or empty.";
+        public const string ACCOUNT_LOCKED = "User account is locked due to multiple failed login attempts. Please try again after {0} Minutes.";
 
         #endregion
 
@@ -168,6 +169,8 @@ namespace Core.Beans
         public const string MAX_FILE_UPLOAD_SIZE = "FileUpload:MaxMultipartBodyLengthInBytes";
         public const string DEFAULT_ROUTE_CONFIG = "RouteSettings";
         public const int SESSION_IDLE_TIME_OUT_HOURS = 10;
+        public const int MAX_FAILED_ATTEMPTS = 10; // Maximum failed login attempts before locking the account for some times
+        public const int LOCK_DURATION_MINUTES = 30;
         #endregion
 
         #region Swagger JWT Auth

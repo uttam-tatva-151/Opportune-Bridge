@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Repositories;
 
 /// <summary>
-/// Maps roles to modules with specific CRUD permissions.
+/// Maps roles and optionally users to modules with specific CRUD permissions. Allows admins to assign custom permissions to their child users.
 /// </summary>
 [Index("RoleId", "ModuleId", Name = "role_module_unique", IsUnique = true)]
 public partial class Permission

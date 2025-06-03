@@ -46,5 +46,8 @@ public partial class Module
     public Guid? ModifiedBy { get; set; }
 
     [InverseProperty("Module")]
+    public virtual ICollection<CustomPermission> CustomPermissions { get; set; } = new List<CustomPermission>();
+
+    [InverseProperty("Module")]
     public virtual ICollection<Permission> Permissions { get; set; } = new List<Permission>();
 }

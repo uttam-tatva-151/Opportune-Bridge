@@ -40,21 +40,18 @@ public partial class UserAuth
     [Column("locked_until", TypeName = "timestamp without time zone")]
     public DateTime? LockedUntil { get; set; }
 
-    [Column("refresh_token")]
-    [StringLength(255)]
-    public string? RefreshToken { get; set; }
-
-    [Column("refresh_token_expires_at", TypeName = "timestamp without time zone")]
-    public DateTime? RefreshTokenExpiresAt { get; set; }
-
-    [Column("token_revoked")]
-    public bool TokenRevoked { get; set; }
-
     [Column("created_at", TypeName = "timestamp without time zone")]
     public DateTime CreatedAt { get; set; }
 
     [Column("updated_at", TypeName = "timestamp without time zone")]
     public DateTime UpdatedAt { get; set; }
+
+    [Column("role_id")]
+    public Guid RoleId { get; set; }
+
+    [ForeignKey("RoleId")]
+    [InverseProperty("UserAuths")]
+    public virtual Role Role { get; set; } = null!;
 
     [ForeignKey("UserId")]
     [InverseProperty("UserAuths")]

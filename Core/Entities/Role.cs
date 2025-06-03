@@ -40,6 +40,24 @@ public partial class Role
     [Column("updated_by")]
     public Guid? UpdatedBy { get; set; }
 
+    [Column("description")]
+    public string Description { get; set; } = null!;
+
+    [Column("is_parent_role")]
+    public bool IsParentRole { get; set; }
+
+    [InverseProperty("Role")]
+    public virtual ICollection<CustomPermission> CustomPermissions { get; set; } = new List<CustomPermission>();
+
     [InverseProperty("Role")]
     public virtual ICollection<Permission> Permissions { get; set; } = new List<Permission>();
+
+    [InverseProperty("ChildRole")]
+    public virtual ICollection<RoleHierarchy> RoleHierarchyChildRoles { get; set; } = new List<RoleHierarchy>();
+
+    [InverseProperty("ParentRole")]
+    public virtual ICollection<RoleHierarchy> RoleHierarchyParentRoles { get; set; } = new List<RoleHierarchy>();
+
+    [InverseProperty("Role")]
+    public virtual ICollection<UserAuth> UserAuths { get; set; } = new List<UserAuth>();
 }

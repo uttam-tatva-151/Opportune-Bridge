@@ -6,6 +6,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Repositories;
+using Repositories.Interfaces;
+using Repositories.Repositories;
+using Services.Interfaces;
+using Services.Services;
 
 namespace WebApi.Extensions;
 
@@ -30,14 +34,9 @@ public static class ServiceCollectionExtensions
             throw new InvalidOperationException(Constants.ERROR_INVALID_JWT_VALUES);
 
         services.AddDbContext<AppDbContext>(options => options.UseNpgsql(databaseConnectionString));
+        services.AddScoped<IUserRepository, UserRepository>();
 
-        services.AddSession(options =>
-        {
-            options.IdleTimeout = TimeSpan.FromHours(Constants.SESSION_IDLE_TIME_OUT_HOURS);
-            options.Cookie.HttpOnly = true;
-            options.Cookie.IsEssential = true;
-        });
-
+        services.AddScoped<IUserService, UserService>();
 
         // JWT Authentication
         services.AddAuthentication(options =>
@@ -91,6 +90,7 @@ public static class ServiceCollectionExtensions
                     }
                 });
             });
+
 
         return services;
     }
