@@ -33,7 +33,6 @@ namespace Core.Beans
         public const string ERROR_MISSING_JWT_SECTION = "JWT configuration section is missing or invalid.";
         public const string ERROR_INVALID_JWT_VALUES = "JWT configuration values (Key, Issuer, Audience) must not be null or empty.";
         public const string ACCOUNT_LOCKED = "User account is locked due to multiple failed login attempts. Please try again after {0} Minutes.";
-
         #endregion
 
         #region  Warning Messages

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tNbBjccvdT3lkJMqy0RD6MF36YzUhwcI7J3gZeXcS6aOO2W4XLyGoFZRqll8No58d0kTKnOHdArr9OX4BypgVg==",
+  "dgSpecHash": "kkRzvJKocJhkI7Eb+bGIX15kyr34Z6KtHsvi1dMkPVNF4E2142Z/B/n3efNk0CyCBLyavRVG5Kv2rHF0svtwVw==",
   "success": true,
-  "projectFilePath": "D:\\Opportune-Bridge\\Bussiness Layer Logic\\Services.csproj",
+  "projectFilePath": "d:\\Opportune-Bridge\\Bussiness Layer Logic\\Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pci151\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\pci151\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

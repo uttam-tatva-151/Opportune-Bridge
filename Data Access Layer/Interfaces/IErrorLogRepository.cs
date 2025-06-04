@@ -4,6 +4,6 @@ namespace Repositories.Interfaces;
 
 public interface IErrorLogRepository
 {
-    public Task SaveErrorLogAsync(ErrorLogDTO errorLog);
+    public Task UpsertErrorLogAsync(ErrorLogDTO errorLog);
 
 }

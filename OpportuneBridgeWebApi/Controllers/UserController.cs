@@ -23,9 +23,7 @@ public class UserController : ControllerBase
         ResponseResult<List<RoleWiseUseDeatilsDTO>> result = new();
         try
         {
-
             result.Data = await _userService.GetRoleWiseUseDeatils();
-            result.Status = ResponseStatus.Success;
         }
         catch (Exception ex)
         {

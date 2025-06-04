@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Npgsql;
 using Repositories;
 using Repositories.Interfaces;
 using Repositories.Repositories;
@@ -17,28 +18,55 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
     {
-        // Bind Configuration from app-json-setting file to strongly-typed classes
+        /* 
+            * Bind Configuration from app-json-setting file to strongly-typed classes
+        */
         IConfigurationSection jwtConfigSection = configuration.GetSection(Constants.JWT_CONFIG);
         services.Configure<JwtConfig>(jwtConfigSection);
         services.Configure<EmailSettings>(configuration.GetSection(Constants.EMAIL_CONFIG));
         services.Configure<RouteSettings>(configuration.GetSection(Constants.DEFAULT_ROUTE_CONFIG));
 
-        // Register DbContext with connection string from appsettings.json
+        /* 
+            * Register DbContext with connection string from appsettings.json
+        */
         string? databaseConnectionString = configuration.GetConnectionString(Constants.DATABASE_DEFAULT_CONNECTION);
         if (string.IsNullOrWhiteSpace(databaseConnectionString))
             throw new InvalidOperationException(Constants.ERROR_MISSING_DB_CONNECTION);
 
-        // Get JwtConfig values and guard against nulls
+        /* 
+            * Register Data source Builder to register composite types of Database
+        */
+        NpgsqlDataSourceBuilder dataSourceBuilder = new(databaseConnectionString);
+        dataSourceBuilder.RegisterAppComposites();
+        NpgsqlDataSource dataSource = dataSourceBuilder.Build();
+
+        services.AddSingleton<NpgsqlDataSource>(dataSource);
+        /* 
+            * Get JwtConfig values and guard against nulls
+        */
         JwtConfig? jwtConfig = jwtConfigSection.Get<JwtConfig>() ?? throw new InvalidOperationException(Constants.ERROR_MISSING_JWT_SECTION);
         if (string.IsNullOrWhiteSpace(jwtConfig.Key) || string.IsNullOrWhiteSpace(jwtConfig.Issuer) || string.IsNullOrWhiteSpace(jwtConfig.Audience))
             throw new InvalidOperationException(Constants.ERROR_INVALID_JWT_VALUES);
 
         services.AddDbContext<AppDbContext>(options => options.UseNpgsql(databaseConnectionString));
+
+        /* 
+            * Register Repositories 
+        */       
+        services.AddScoped<IErrorLogRepository, ErrorLogRepository>();
         services.AddScoped<IUserRepository, UserRepository>();
 
+        /* 
+            * Register Services 
+        */ 
+        services.AddScoped<IErrorLogService, ErrorLogService>();
         services.AddScoped<IUserService, UserService>();
+        services.AddScoped<IJWTService, JWTService>();
+        services.AddScoped<ILoginService, LoginService>();
 
-        // JWT Authentication
+        /* 
+            * JWT Authentication
+        */  
         services.AddAuthentication(options =>
         {
             options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -60,7 +88,9 @@ public static class ServiceCollectionExtensions
 
         services.AddAuthorization();
 
-        // Swagger JWT Security
+        /* 
+            * Swagger JWT Security
+        */ 
         services.AddSwaggerGen(options =>
             {
                 options.AddSecurityDefinition(Constants.SWAGGER_SECURITY_SCHEME, new OpenApiSecurityScheme

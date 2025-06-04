@@ -13,7 +13,14 @@ public class ErrorLogService : IErrorLogService
     }
     public async Task SaveErrorLogAsync(ErrorLogDTO errorLog)
     {
-        await _errorLogRepository.SaveErrorLogAsync(errorLog);
+         if (errorLog == null)
+        throw new ArgumentNullException(nameof(errorLog));
+    if (string.IsNullOrWhiteSpace(errorLog.ExceptionType) ||
+        string.IsNullOrWhiteSpace(errorLog.StatusCode))
+    {
+        throw new ArgumentException("ExceptionType and StatusCode are required.");
     }
+    await _errorLogRepository.UpsertErrorLogAsync(errorLog);
+}
 
 }

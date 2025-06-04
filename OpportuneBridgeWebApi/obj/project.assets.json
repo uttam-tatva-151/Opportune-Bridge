@@ -4677,11 +4677,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Opportune-Bridge\\OpportuneBridgeWebApi\\WebApi.csproj",
+      "projectUniqueName": "d:\\Opportune-Bridge\\OpportuneBridgeWebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "D:\\Opportune-Bridge\\OpportuneBridgeWebApi\\WebApi.csproj",
+      "projectPath": "d:\\Opportune-Bridge\\OpportuneBridgeWebApi\\WebApi.csproj",
       "packagesPath": "C:\\Users\\pci151\\.nuget\\packages\\",
-      "outputPath": "D:\\Opportune-Bridge\\OpportuneBridgeWebApi\\obj\\",
+      "outputPath": "d:\\Opportune-Bridge\\OpportuneBridgeWebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pci151\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -4696,11 +4696,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Opportune-Bridge\\Bussiness Layer Logic\\Services.csproj": {
-              "projectPath": "D:\\Opportune-Bridge\\Bussiness Layer Logic\\Services.csproj"
+            "d:\\Opportune-Bridge\\Bussiness Layer Logic\\Services.csproj": {
+              "projectPath": "d:\\Opportune-Bridge\\Bussiness Layer Logic\\Services.csproj"
             },
-            "D:\\Opportune-Bridge\\Core\\Core.csproj": {
-              "projectPath": "D:\\Opportune-Bridge\\Core\\Core.csproj"
+            "d:\\Opportune-Bridge\\Core\\Core.csproj": {
+              "projectPath": "d:\\Opportune-Bridge\\Core\\Core.csproj"
             }
           }
         }

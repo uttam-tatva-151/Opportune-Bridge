@@ -10,12 +10,10 @@ namespace WebApi.Middlewares;
 public class ExceptionMiddleware
 {
     private readonly RequestDelegate _next;
-    private readonly IErrorLogService _errorLogService;
 
-    public ExceptionMiddleware(RequestDelegate next, IErrorLogService errorLogService)
+    public ExceptionMiddleware(RequestDelegate next)
     {
         _next = next;
-        _errorLogService = errorLogService;
     }
     public async Task InvokeAsync(HttpContext context)
     {
@@ -39,22 +37,23 @@ public class ExceptionMiddleware
         Endpoint? endpoint = context.GetEndpoint();
         return endpoint?.Metadata?.GetMetadata<ControllerActionDescriptor>()?.ActionName ?? "Unknown";
     }
-    private async Task HandleExceptionAsync(HttpContext context, Exception exception)
+    private static async Task HandleExceptionAsync(HttpContext context, Exception exception)
     {
+        IErrorLogService errorLogService = context.RequestServices.GetRequiredService<IErrorLogService>();
         (string ShortErrorMessage, int StatusCode) = ExceptionHelper.GetErrorShortModel(exception);
 
         ErrorLogDTO errorDetails = new()
         {
             ErrorMessage = exception.Message,
-            StackTrace = exception.StackTrace,
+            StackTrace = exception.StackTrace?.Trim() ?? "No stack trace available",
             ExceptionType = exception.GetType().Name,
             ControllerName = GetControllerName(context),
             ActionName = GetActionName(context),
-            StatusCode = context.Response.StatusCode.ToString()
+            StatusCode = StatusCode.ToString()
         };
 
         // Save error details to the error log database 
-        await _errorLogService.SaveErrorLogAsync(errorDetails);
+        await errorLogService.SaveErrorLogAsync(errorDetails);
 
         // Prepare the response
         var response = new
@@ -66,7 +65,7 @@ public class ExceptionMiddleware
 
         // Set response headers and content
         context.Response.ContentType = "application/json";
-        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+        context.Response.StatusCode = StatusCode;
 
         // Serialize and return the response
         string jsonResponse = JsonSerializer.Serialize(response);

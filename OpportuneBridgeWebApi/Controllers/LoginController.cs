@@ -11,22 +11,14 @@ namespace WebApi.Controllers;
 public class LoginController : ControllerBase
 {
     private readonly ILoginService _loginService;
-    public LoginController(ILoginService loginService){
+    public LoginController(ILoginService loginService)
+    {
         _loginService = loginService;
     }
     [HttpPost("login")]
-        public async Task<ResponseResult<LoginResult>> LoginUser(LoginRequest request)
-        {
-            ResponseResult<LoginResult> result = new();
-            try
-            {
-                result= await _loginService.AuthenticateUserAsync(request);
-            }
-            catch(Exception ex)
-            {
-                result.Message = ex.Message;
-                result.Status = ResponseStatus.Failed;
-            }
-            return result;
-        }
+    public async Task<ResponseResult<LoginResult>> LoginUser(LoginRequest request)
+    {
+        ResponseResult<LoginResult> result =  await _loginService.AuthenticateUserAsync(request);
+        return result;
+    }
 }

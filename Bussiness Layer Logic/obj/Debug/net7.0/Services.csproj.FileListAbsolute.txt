@@ -1,4 +1,4 @@
-D:\Opportune-Bridge\Bussiness Layer Logic\bin\Debug\net7.0\Services.deps.json
+d:\Opportune-Bridge\Bussiness Layer Logic\bin\Debug\net7.0\Services.deps.json
 D:\Opportune-Bridge\Bussiness Layer Logic\bin\Debug\net7.0\Services.dll
 D:\Opportune-Bridge\Bussiness Layer Logic\bin\Debug\net7.0\Services.pdb
 D:\Opportune-Bridge\Bussiness Layer Logic\bin\Debug\net7.0\Core.dll
@@ -10,8 +10,8 @@ D:\Opportune-Bridge\Bussiness Layer Logic\obj\Debug\net7.0\Services.GeneratedMSB
 D:\Opportune-Bridge\Bussiness Layer Logic\obj\Debug\net7.0\Services.AssemblyInfoInputs.cache
 D:\Opportune-Bridge\Bussiness Layer Logic\obj\Debug\net7.0\Services.AssemblyInfo.cs
 D:\Opportune-Bridge\Bussiness Layer Logic\obj\Debug\net7.0\Services.csproj.CoreCompileInputs.cache
-D:\Opportune-Bridge\Bussiness Layer Logic\obj\Debug\net7.0\Services.csproj.CopyComplete
+d:\Opportune-Bridge\Bussiness Layer Logic\obj\Debug\net7.0\Services.csproj.CopyComplete
 D:\Opportune-Bridge\Bussiness Layer Logic\obj\Debug\net7.0\Services.dll
 D:\Opportune-Bridge\Bussiness Layer Logic\obj\Debug\net7.0\refint\Services.dll
 D:\Opportune-Bridge\Bussiness Layer Logic\obj\Debug\net7.0\Services.pdb
-D:\Opportune-Bridge\Bussiness Layer Logic\obj\Debug\net7.0\ref\Services.dll
+d:\Opportune-Bridge\Bussiness Layer Logic\obj\Debug\net7.0\ref\Services.dll

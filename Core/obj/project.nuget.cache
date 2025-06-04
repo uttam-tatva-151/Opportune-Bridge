@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3S2dZk2F30y4OSDgMgDgxMX5/+tuYHbhqW4j7L2gV30N2zHNnUAo+JPVZjfovjkjTs0LLMGCdJOvzudbjkEJ7w==",
+  "dgSpecHash": "0i7zYe1bzx2MnmX/MvRQi0SCVuUNR7qqGDpWZhcXjJApzocwx7Vr8YPZgn+RT49GQ1HUWGmvQr7dVX1QLUqEMw==",
   "success": true,
-  "projectFilePath": "D:\\Opportune-Bridge\\Core\\Core.csproj",
+  "projectFilePath": "d:\\Opportune-Bridge\\Core\\Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pci151\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\pci151\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

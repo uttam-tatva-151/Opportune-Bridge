@@ -31,7 +31,7 @@ namespace Core.Mappers
                 StatusCode = errorLogDTO.StatusCode,
                 ControllerName = errorLogDTO.ControllerName,
                 ActionName = errorLogDTO.ActionName,
-                ErrorOccurAt = DateTime.UtcNow, // Default to current time for new entities
+                ErrorOccurAt = DateTime.Now, // Default to current time for new entities
                 IsSolved = false, // Default to false for new entities
                 ErrorOccurCount = 1 // Default to 1 for new entities
             };
