@@ -105,6 +105,8 @@ namespace Core.Beans
         public const string USER_CONTROLLER = "User";
         public const string ERROR_CONTROLLER = "ErrorHandler";
 
+        public const string UNKNOWN_ACTION_NAME = "Unknown";
+        public const string UNKNOWN_CONTROLLER_NAME = "Unknown";
         public const string ERROR_HANDLER_HTTP_STATUS_CODE_HANDLER_ROUTE = "/ErrorHandler/HttpStatusCodeHandler/{0}";
         public const string ERROR_HANDLER_HTTP_STATUS_CODE_500_ROUTE = "/ErrorHandler/HttpStatusCodeHandler/500";
         public const string ERROR_HANDLER_HTTP_STATUS_CODE_404_ROUTE = "/ErrorHandler/HttpStatusCodeHandler/404";
@@ -146,6 +148,7 @@ namespace Core.Beans
         public const string DATE_FORMATE = "yyyy-MM-dd";
         public const string PDF_CONTENT_TYPE = "application/pdf";
         public const string IMAGE_FORMATE = "data:image/jpeg;base64";
+        public const string JSON_CONTENT_TYPE = "application/json";
         #endregion
 
         #region  Roles

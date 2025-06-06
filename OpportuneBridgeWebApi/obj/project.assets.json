@@ -4677,11 +4677,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Opportune-Bridge\\OpportuneBridgeWebApi\\WebApi.csproj",
+      "projectUniqueName": "D:\\Opportune-Bridge\\OpportuneBridgeWebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "d:\\Opportune-Bridge\\OpportuneBridgeWebApi\\WebApi.csproj",
+      "projectPath": "D:\\Opportune-Bridge\\OpportuneBridgeWebApi\\WebApi.csproj",
       "packagesPath": "C:\\Users\\pci151\\.nuget\\packages\\",
-      "outputPath": "d:\\Opportune-Bridge\\OpportuneBridgeWebApi\\obj\\",
+      "outputPath": "D:\\Opportune-Bridge\\OpportuneBridgeWebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pci151\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -4696,11 +4696,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "d:\\Opportune-Bridge\\Bussiness Layer Logic\\Services.csproj": {
-              "projectPath": "d:\\Opportune-Bridge\\Bussiness Layer Logic\\Services.csproj"
+            "D:\\Opportune-Bridge\\Bussiness Layer Logic\\Services.csproj": {
+              "projectPath": "D:\\Opportune-Bridge\\Bussiness Layer Logic\\Services.csproj"
             },
-            "d:\\Opportune-Bridge\\Core\\Core.csproj": {
-              "projectPath": "d:\\Opportune-Bridge\\Core\\Core.csproj"
+            "D:\\Opportune-Bridge\\Core\\Core.csproj": {
+              "projectPath": "D:\\Opportune-Bridge\\Core\\Core.csproj"
             }
           }
         }
@@ -4709,6 +4709,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -4759,8 +4764,20 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.410\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Text.Json' 7.0.4 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w",
+      "libraryId": "System.Text.Json",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

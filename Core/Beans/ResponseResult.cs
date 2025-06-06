@@ -28,3 +28,9 @@ public class ResponseResult<T>
         };
     }
 }
+public class ErrorResponse
+{
+    public string Error { get; set; } = null!;
+    public string Message { get; set; } = null!;
+    public int Status { get; set; }
+}

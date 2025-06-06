@@ -1,13 +1,17 @@
 using WebApi.Extensions;
 using WebApi.Middlewares;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
-
-
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddApplicationServices(builder.Configuration);
+builder.Services.AddConfigurationBindings(builder.Configuration);
+builder.Services.AddDatabase(builder.Configuration);
+builder.Services.AddRepositories();
+builder.Services.AddServices();
+builder.Services.AddJwtAuthentication(builder.Configuration);
+builder.Services.AddSwaggerDocumentation();
 
 WebApplication app = builder.Build();
 
@@ -19,8 +23,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-app.UseAuthorization();
 app.UseMiddleware<ExceptionMiddleware>();
 app.MapControllers();
 

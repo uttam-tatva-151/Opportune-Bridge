@@ -3872,11 +3872,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Opportune-Bridge\\Bussiness Layer Logic\\Services.csproj",
+      "projectUniqueName": "D:\\Opportune-Bridge\\Bussiness Layer Logic\\Services.csproj",
       "projectName": "Services",
-      "projectPath": "d:\\Opportune-Bridge\\Bussiness Layer Logic\\Services.csproj",
+      "projectPath": "D:\\Opportune-Bridge\\Bussiness Layer Logic\\Services.csproj",
       "packagesPath": "C:\\Users\\pci151\\.nuget\\packages\\",
-      "outputPath": "d:\\Opportune-Bridge\\Bussiness Layer Logic\\obj\\",
+      "outputPath": "D:\\Opportune-Bridge\\Bussiness Layer Logic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pci151\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -3891,11 +3891,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "d:\\Opportune-Bridge\\Core\\Core.csproj": {
-              "projectPath": "d:\\Opportune-Bridge\\Core\\Core.csproj"
+            "D:\\Opportune-Bridge\\Core\\Core.csproj": {
+              "projectPath": "D:\\Opportune-Bridge\\Core\\Core.csproj"
             },
-            "d:\\Opportune-Bridge\\Data Access Layer\\Repositories.csproj": {
-              "projectPath": "d:\\Opportune-Bridge\\Data Access Layer\\Repositories.csproj"
+            "D:\\Opportune-Bridge\\Data Access Layer\\Repositories.csproj": {
+              "projectPath": "D:\\Opportune-Bridge\\Data Access Layer\\Repositories.csproj"
             }
           }
         }
@@ -3904,6 +3904,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3931,7 +3936,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.410\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   }
